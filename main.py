@@ -15,7 +15,7 @@ bg_image = pygame.image.load("assets/images/background.jpg").convert_alpha()
 
 # Function For Drawing Background
 def draw_bg():
-    screen.blits(bg_image, (0, 0))
+    screen.blit(bg_image, (0, 0))
 
 
 # Create Game Loop
@@ -27,6 +27,7 @@ while run:
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             run = False
-
+    # Update Display
+    pygame.display.update()
 # Exit PyGame
 pygame.quit()
