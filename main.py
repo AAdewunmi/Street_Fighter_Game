@@ -15,7 +15,8 @@ bg_image = pygame.image.load("assets/images/background.jpg").convert_alpha()
 
 # Function For Drawing Background
 def draw_bg():
-    screen.blit(bg_image, (0, 0))
+    scaled_bg = pygame.transform.scale(bg_image, (SCREEN_WIDTH, SCREEN_HEIGHT))
+    screen.blit(scaled_bg, (0, 0))
 
 
 # Create Game Loop
