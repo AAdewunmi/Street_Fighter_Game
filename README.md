@@ -1,8 +1,13 @@
-# Project Title: Street Fighter Game
+# Project Title: Street Fighter Game (Work-In-Progress)
 
 ## What is the project?
 
 Aim: The aim of this project is to build a Street Fighter Game in python using the pygame library.
+
+- Screenshot of Game UI
+
+
+![Image description](assets/images/Demo_Screenshot.png)
 
 
 ## Tech Stack
