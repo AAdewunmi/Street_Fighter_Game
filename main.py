@@ -21,7 +21,8 @@ def draw_bg():
 # Create Game Loop
 run = True
 while run:
-
+    # Draw Background
+    draw_bg()
     # Implement Event Handler
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
