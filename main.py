@@ -29,6 +29,9 @@ run = True
 while run:
     # Draw Background
     draw_bg()
+    # Draw Fighters
+    fighter_1.draw(screen)
+    fighter_2.draw(screen)
     # Implement Event Handler
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
