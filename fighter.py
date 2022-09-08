@@ -7,7 +7,7 @@ class Fighter():
         self.rect = pygame.Rect((x, y, 80, 180))
 
     @staticmethod
-    def move():
+    def move(self):
         SPEED = 10
         dx = 0
         dy = 0
@@ -20,6 +20,9 @@ class Fighter():
             dx = -SPEED
         if key[pygame.K_d]:
             dx = SPEED
+        # Update Player Position
+        self.rect.x += dx
+        self.rect.y += dy
 
     def draw(self, surface):
         pygame.draw.rect(surface, (255, 0, 0), self.rect)
