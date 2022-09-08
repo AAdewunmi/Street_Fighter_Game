@@ -11,5 +11,8 @@ class Fighter():
         dx = 0
         dy = 0
 
+        # Get Key-presses
+        key = pygame.key.get_pressed()
+
     def draw(self, surface):
         pygame.draw.rect(surface, (255, 0, 0), self.rect)
