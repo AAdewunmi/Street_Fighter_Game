@@ -10,6 +10,10 @@ SCREEN_HEIGHT = 600
 screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
 pygame.display.set_caption("Street Fighter!")
 
+# Set Framerate
+clock = pygame.time.Clock()
+FPS = 60
+
 # Load Background Image
 bg_image = pygame.image.load("assets/images/background.jpg").convert_alpha()
 
@@ -27,6 +31,7 @@ fighter_2 = Fighter(700, 310)
 # Create Game Loop
 run = True
 while run:
+    clock.tick(FPS)
     # Draw Background
     draw_bg()
     # Move Fighters
