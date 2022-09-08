@@ -29,6 +29,9 @@ run = True
 while run:
     # Draw Background
     draw_bg()
+    # Move Fighters
+    fighter_1.move()
+    fighter_2.move()
     # Draw Fighters
     fighter_1.draw(screen)
     fighter_2.draw(screen)
