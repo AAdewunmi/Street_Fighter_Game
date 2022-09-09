@@ -1,3 +1,14 @@
+# Street Fighter Game
+# By: Adrian Adewunmi
+# Date: 04/09/2022
+# Version: 1.0
+# Description: This is the file Fighter Class.
+# Adapted from:
+# Coding With Ross
+# Youtube URL: https://www.youtube.com/watch?v=s5bd9KMSSW4
+# GitHub URL: https://github.com/russs123/brawler_tut
+
+
 import pygame
 
 
@@ -5,6 +16,7 @@ import pygame
 class Fighter():
     def __init__(self, x: object, y: object) -> object:
         self.rect = pygame.Rect((x, y, 80, 180))
+        self.vel_y = 0
 
     def move(self, screen_width):
         SPEED = 10
@@ -19,6 +31,12 @@ class Fighter():
             dx = -SPEED
         if key[pygame.K_RIGHT]:
             dx = SPEED
+
+        # Player Jumping
+        if key[pygame.K_w]:
+            self.vel_y = -30
+
+        dy += self.vel_y
 
         # Ensure Player Stays On Screen
         if self.rect.left + dx < 0:

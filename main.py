@@ -1,15 +1,17 @@
-# Space Invaders Game
+# Street Fighter Game
 # By: Adrian Adewunmi
-# Date: 28/07/2022
+# Date: 04/09/2022
 # Version: 1.0
-# Description: This is the main file for the Space Invaders game.
+# Description: This is the main file for the Street Fighter Game.
 #             It contains the main game loop and the main game functions.
 #             It also contains the main menu and the game over screen.
 #             It also contains the high score screen.
 #             It also contains the pause screen.
 #             It also contains the game over screen.
-# Adapted from: https://www.youtube.com/watch?v=FfWpgLFMI7w
-#               https://github.com/attreyabhatt/Space-Invaders-Pygame
+# Adapted from:
+# Coding With Ross
+# Youtube URL: https://www.youtube.com/watch?v=s5bd9KMSSW4
+# GitHub URL: https://github.com/russs123/brawler_tut
 
 
 import pygame
