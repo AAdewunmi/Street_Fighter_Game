@@ -20,6 +20,7 @@ class Fighter():
 
     def move(self, screen_width):
         SPEED = 10
+        GRAVITY = 2
         dx = 0
         dy = 0
 
@@ -36,6 +37,8 @@ class Fighter():
         if key[pygame.K_UP]:
             self.vel_y = -30
 
+        # Player Return From Jumping
+        self.vel_y += GRAVITY
         dy += self.vel_y
 
         # Ensure Player Stays On Screen
