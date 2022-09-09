@@ -15,9 +15,9 @@ class Fighter():
         key = pygame.key.get_pressed()
 
         # Player movement coordinates
-        if key[pygame.K_a]:
+        if key[pygame.K_LEFT]:
             dx = -SPEED
-        if key[pygame.K_d]:
+        if key[pygame.K_RIGHT]:
             dx = SPEED
 
         # Ensure Player Stays On Screen
