@@ -33,7 +33,7 @@ class Fighter():
             dx = SPEED
 
         # Player Jumping
-        if key[pygame.K_w]:
+        if key[pygame.K_UP]:
             self.vel_y = -30
 
         dy += self.vel_y
