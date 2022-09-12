@@ -18,6 +18,7 @@ class Fighter():
         self.rect = pygame.Rect((x, y, 80, 180))
         self.vel_y = 0
         self.jump = False
+        self.attacking = False
         self.attack_type = 0
 
     def move(self, screen_width, screen_height, surface, target):
@@ -29,25 +30,28 @@ class Fighter():
         # Get Key-presses
         key = pygame.key.get_pressed()
 
-        # Player movement coordinates
-        if key[pygame.K_LEFT]:
-            dx = -SPEED
-        if key[pygame.K_RIGHT]:
-            dx = SPEED
+        # Can only perform other actions if not currently attacking
+        if not self.attacking:
 
-        # Player Jumping
-        if key[pygame.K_UP] and self.jump == False:
-            self.vel_y = -30
-            self.jump = True
+            # Player movement coordinates
+            if key[pygame.K_LEFT]:
+                dx = -SPEED
+            if key[pygame.K_RIGHT]:
+                dx = SPEED
 
-        # Player Attacking
-        if key[pygame.K_r] or key[pygame.K_t]:
-            self.attack(surface, target)
-            # Determine which attack type was used
-            if key[pygame.K_r]:
-                self.attack_type = 1
-            if key[pygame.K_t]:
-                self.attack_type = 2
+            # Player Jumping
+            if key[pygame.K_UP] and self.jump == False:
+                self.vel_y = -30
+                self.jump = True
+
+            # Player Attacking
+            if key[pygame.K_r] or key[pygame.K_t]:
+                self.attack(surface, target)
+                # Determine which attack type was used
+                if key[pygame.K_r]:
+                    self.attack_type = 1
+                if key[pygame.K_t]:
+                    self.attack_type = 2
 
         # Player Return From Jumping
         self.vel_y += GRAVITY
@@ -68,6 +72,7 @@ class Fighter():
         self.rect.y += dy
 
     def attack(self, surface, target):
+        self.attacking = True
         attacking_rect = pygame.Rect(self.rect.centerx, self.rect.y, 2 * self.rect.width, self.rect.height)
         if attacking_rect.colliderect(target.rect):
             print("HIT!")
