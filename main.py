@@ -45,6 +45,9 @@ def draw_bg():
     screen.blit(scaled_bg, (0, 0))
 
 
+# Function For Drawing Fighter Health Bar
+def draw_health_bar(health, x, y):
+    pygame.draw.rect(screen, YELLOW, (x, y, 400, 30))
 
 
 # Create Two Instances Of Fighter
@@ -57,6 +60,8 @@ while run:
     clock.tick(FPS)
     # Draw Background
     draw_bg()
+
+    draw_health_bar()
     # Move Fighters
     fighter_1.move(SCREEN_WIDTH, SCREEN_HEIGHT, screen, fighter_2)
     # fighter_2.move()
