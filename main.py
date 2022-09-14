@@ -60,8 +60,9 @@ while run:
     clock.tick(FPS)
     # Draw Background
     draw_bg()
-
-    draw_health_bar()
+    # Show Player Stats
+    draw_health_bar(fighter_1, 20, 20)
+    draw_health_bar(fighter_2, 580, 20)
     # Move Fighters
     fighter_1.move(SCREEN_WIDTH, SCREEN_HEIGHT, screen, fighter_2)
     # fighter_2.move()
