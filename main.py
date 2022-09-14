@@ -47,7 +47,8 @@ def draw_bg():
 
 # Function For Drawing Fighter Health Bar
 def draw_health_bar(health, x, y):
-    pygame.draw.rect(screen, YELLOW, (x, y, 400, 30))
+    ratio = health / 100
+    pygame.draw.rect(screen, YELLOW, (x, y, (400 * ratio), 30))
 
 
 # Create Two Instances Of Fighter
@@ -61,8 +62,8 @@ while run:
     # Draw Background
     draw_bg()
     # Show Player Stats
-    draw_health_bar(fighter_1, 20, 20)
-    draw_health_bar(fighter_2, 580, 20)
+    draw_health_bar(fighter_1.health, 20, 20)
+    draw_health_bar(fighter_2.health, 580, 20)
     # Move Fighters
     fighter_1.move(SCREEN_WIDTH, SCREEN_HEIGHT, screen, fighter_2)
     # fighter_2.move()
