@@ -20,6 +20,7 @@ class Fighter():
         self.jump = False
         self.attacking = False
         self.attack_type = 0
+        self.health = 100
 
     def move(self, screen_width, screen_height, surface, target):
         SPEED = 10
@@ -75,7 +76,7 @@ class Fighter():
         self.attacking = True
         attacking_rect = pygame.Rect(self.rect.centerx, self.rect.y, 2 * self.rect.width, self.rect.height)
         if attacking_rect.colliderect(target.rect):
-            print("HIT!")
+            target.health -= 10
         pygame.draw.rect(surface, (0, 255, 0), attacking_rect)
 
     def draw(self, surface):

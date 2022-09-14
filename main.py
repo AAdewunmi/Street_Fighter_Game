@@ -30,6 +30,11 @@ pygame.display.set_caption("Street Fighter!")
 clock = pygame.time.Clock()
 FPS = 60
 
+# Define Colours
+RED = (255, 0, 0)
+YELLOW = (255, 255, 0)
+WHITE = (255, 255, 255)
+
 # Load Background Image
 bg_image = pygame.image.load("assets/images/background.jpg").convert_alpha()
 
@@ -38,6 +43,8 @@ bg_image = pygame.image.load("assets/images/background.jpg").convert_alpha()
 def draw_bg():
     scaled_bg = pygame.transform.scale(bg_image, (SCREEN_WIDTH, SCREEN_HEIGHT))
     screen.blit(scaled_bg, (0, 0))
+
+
 
 
 # Create Two Instances Of Fighter
