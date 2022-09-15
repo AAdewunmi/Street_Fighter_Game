@@ -48,6 +48,7 @@ def draw_bg():
 # Function For Drawing Fighter Health Bar
 def draw_health_bar(health, x, y):
     ratio = health / 100
+    pygame.draw.rect(screen, WHITE, (x - 5, y - 5, 410, 40))
     pygame.draw.rect(screen, RED, (x, y, 400, 30))
     pygame.draw.rect(screen, YELLOW, (x, y, (400 * ratio), 30))
 
