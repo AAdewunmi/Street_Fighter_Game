@@ -15,6 +15,7 @@
 
 
 import pygame
+
 from fighter import Fighter
 
 # Initialise Pygame
@@ -42,6 +43,11 @@ bg_image = pygame.image.load("assets/images/background/background.jpg").convert_
 warrior_sheet = pygame.image.load("assets/images/warrior/Sprites/warrior.png").convert_alpha()
 # Load Wizard Sprite sheets Of Images
 warrior_sheet = pygame.image.load("assets/images/wizard/Sprites/wizard.png").convert_alpha()
+
+# Define number of steps in each animation for Warrior and Wizard Player
+WARRIOR_ANIMATION = [10, 8, 1, 7, 7, 3, 7]
+WIZARD_ANIMATION = [8, 8, 1, 8, 8, 3, 7]
+
 
 # Function For Drawing Background
 def draw_bg():
