@@ -42,11 +42,11 @@ bg_image = pygame.image.load("assets/images/background/background.jpg").convert_
 # Load Warrior Sprite sheets Of Images
 warrior_sheet = pygame.image.load("assets/images/warrior/Sprites/warrior.png").convert_alpha()
 # Load Wizard Sprite sheets Of Images
-warrior_sheet = pygame.image.load("assets/images/wizard/Sprites/wizard.png").convert_alpha()
+wizard_sheet = pygame.image.load("assets/images/wizard/Sprites/wizard.png").convert_alpha()
 
 # Define number of steps in each animation for Warrior and Wizard Player
-WARRIOR_ANIMATION = [10, 8, 1, 7, 7, 3, 7]
-WIZARD_ANIMATION = [8, 8, 1, 8, 8, 3, 7]
+WARRIOR_ANIMATION_STEPS = [10, 8, 1, 7, 7, 3, 7]
+WIZARD_ANIMATION_STEPS = [8, 8, 1, 8, 8, 3, 7]
 
 
 # Function For Drawing Background
@@ -64,8 +64,8 @@ def draw_health_bar(health, x, y):
 
 
 # Create Two Instances Of Fighter
-fighter_1 = Fighter(200, 310)
-fighter_2 = Fighter(700, 310)
+fighter_1 = Fighter(200, 310, warrior_sheet, WARRIOR_ANIMATION_STEPS)
+fighter_2 = Fighter(700, 310, wizard_sheet, WIZARD_ANIMATION_STEPS)
 
 # Create Game Loop
 run = True
