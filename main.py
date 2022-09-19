@@ -36,7 +36,7 @@ YELLOW = (255, 255, 0)
 WHITE = (255, 255, 255)
 
 # Load Background Image
-bg_image = pygame.image.load("assets/images/background.jpg").convert_alpha()
+bg_image = pygame.image.load("assets/images/background/background.jpg").convert_alpha()
 
 
 # Function For Drawing Background
