@@ -38,6 +38,8 @@ WHITE = (255, 255, 255)
 # Load Background Image
 bg_image = pygame.image.load("assets/images/background/background.jpg").convert_alpha()
 
+# Load Warrior Sprite sheets Of Images
+warrior_sheet = pygame.image.load("assets/images/warrior/Sprites/warrior.png").convert_alpha()
 
 # Function For Drawing Background
 def draw_bg():
