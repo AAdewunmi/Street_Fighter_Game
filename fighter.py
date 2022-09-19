@@ -17,6 +17,7 @@ class Fighter():
     def __init__(self, x, y, data, sprite_sheet, animation_steps):
         self.size = data[0]
         self.flip = False
+        self.animation_list = self.load_images(sprite_sheet, animation_steps)
         self.rect = pygame.Rect((x, y, 80, 180))
         self.vel_y = 0
         self.jump = False
@@ -25,8 +26,15 @@ class Fighter():
         self.health = 100
 
     def load_images(self, sprite_sheet, animation_steps):
-        for _ in range(animation):
-            temp_img = sprite_sheet.subsurface()
+        animation_list = []
+        for y, animation in enumerate(animation_steps):
+            temp_img_list = []
+            for x in range(animation):
+                temp_img = sprite_sheet.subsurface(x * self.size, y * self.size, self.size, self.size)
+                temp_img_list.append(temp_img)
+            animation_list.append(temp_img_list)
+        return animation_list
+
     def move(self, screen_width, screen_height, surface, target):
         SPEED = 10
         GRAVITY = 2
@@ -40,9 +48,9 @@ class Fighter():
         if not self.attacking:
 
             # Player movement coordinates
-            if key[pygame.K_LEFT]:
+            if key[pygame.K_a]:
                 dx = -SPEED
-            if key[pygame.K_RIGHT]:
+            if key[pygame.K_d]:
                 dx = SPEED
 
             # Player Jumping
