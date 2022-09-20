@@ -18,6 +18,10 @@ class Fighter():
         self.size = data[0]
         self.flip = False
         self.animation_list = self.load_images(sprite_sheet, animation_steps)
+        # 0:idle #1:run #2:jump #3:attack1 #4:attack2 #5:hit #6:death
+        self.action = 0
+        self.frame_index = 0
+        self.image = self.animation_list[self.action][self.frame_index]
         self.rect = pygame.Rect((x, y, 80, 180))
         self.vel_y = 0
         self.jump = False
@@ -100,3 +104,4 @@ class Fighter():
 
     def draw(self, surface):
         pygame.draw.rect(surface, (255, 0, 0), self.rect)
+        surface.blit(self.image, (self.rect.x, self.rect.y))
