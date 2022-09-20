@@ -38,9 +38,13 @@ WHITE = (255, 255, 255)
 
 # Define Fighter Sprite Sheet Image Variables
 WARRIOR_SIZE = 162
-WARRIOR_DATA = [WARRIOR_SIZE]
+WARRIOR_SCALE = 4
+WARRIOR_OFFSET = [72, 56]
+WARRIOR_DATA = [WARRIOR_SIZE, WARRIOR_SCALE, WARRIOR_OFFSET]
 WIZARD_SIZE = 250
-WIZARD_DATA = [WIZARD_SIZE]
+WIZARD_SCALE = 3
+WIZARD_OFFSET = [112, 107]
+WIZARD_DATA = [WIZARD_SIZE, WIZARD_SCALE, WIZARD_OFFSET]
 
 # Load Background Image
 bg_image = pygame.image.load("assets/images/background/background.jpg").convert_alpha()
