@@ -31,6 +31,7 @@ class Fighter:
         self.jump = False
         self.attacking = False
         self.attack_type = 0
+        self.attack_cooldown = 0
         self.health = 100
 
     def load_images(self, sprite_sheet, animation_steps):
@@ -99,6 +100,11 @@ class Fighter:
             self.flip = False
         else:
             self.flip = True
+
+        # Apply attack cooldown
+        if self.attack_cooldown > 0:
+            self.attack_cooldown -= 1
+
         # Update Player Position
         self.rect.x += dx
         self.rect.y += dy
@@ -123,7 +129,7 @@ class Fighter:
         else:
             # 0:Idle
             self.update_action(0)
-        animation_cooldown = 50
+        animation_cooldown = 20
         # Update Image
         self.image = self.animation_list[self.action][self.frame_index]
         # Check if enough time has passed since the last update
@@ -136,14 +142,16 @@ class Fighter:
             # check if an attack was executed
             if self.action == 3 or self.action == 4:
                 self.attacking = False
+                self.attack_cooldown = 50
 
     def attack(self, surface, target):
-        self.attacking = True
-        attacking_rect = pygame.Rect(self.rect.centerx - (2 * self.rect.width * self.flip),
-                                     self.rect.y, 2 * self.rect.width, self.rect.height)
-        if attacking_rect.colliderect(target.rect):
-            target.health -= 10
-        pygame.draw.rect(surface, (0, 255, 0), attacking_rect)
+        if self.attack_cooldown == 0:
+            self.attacking = True
+            attacking_rect = pygame.Rect(self.rect.centerx - (2 * self.rect.width * self.flip),
+                                         self.rect.y, 2 * self.rect.width, self.rect.height)
+            if attacking_rect.colliderect(target.rect):
+                target.health -= 10
+            pygame.draw.rect(surface, (0, 255, 0), attacking_rect)
 
     def draw(self, surface):
         img = pygame.transform.flip(self.image, self.flip, False)
