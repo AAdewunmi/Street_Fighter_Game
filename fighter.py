@@ -150,6 +150,9 @@ class Fighter:
             # Check if damage was taken
             if self.action == 5:
                 self.hit = False
+            # If the player was in the middle of an attack, then the attack is stopped
+            self.attacking = False
+            self.attack_cooldown = 20
 
     def attack(self, surface, target):
         if self.attack_cooldown == 0:
