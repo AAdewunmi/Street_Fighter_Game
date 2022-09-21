@@ -13,7 +13,7 @@ import pygame
 
 
 # Fighter Class
-class Fighter():
+class Fighter:
     def __init__(self, x, y, flip, data, sprite_sheet, animation_steps):
         self.size = data[0]
         self.image_scale = data[1]
@@ -133,6 +133,9 @@ class Fighter():
         # Check if the animation has finished
         if self.frame_index >= len(self.animation_list[self.action]):
             self.frame_index = 0
+            # check if an attack was executed
+            if self.action == 3 or self.action == 4:
+                self.attacking = False
 
     def attack(self, surface, target):
         self.attacking = True
