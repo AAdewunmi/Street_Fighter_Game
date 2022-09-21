@@ -107,9 +107,9 @@ class Fighter():
     def update(self):
         # Check what action the player is performing
         if self.running:
-            self.action = 1
+            self.update_action(1)
         else:
-            self.action = 0
+            self.update_action(0)
         animation_cooldown = 50
         # Update Image
         self.image = self.animation_list[self.action][self.frame_index]
@@ -135,3 +135,14 @@ class Fighter():
         pygame.draw.rect(surface, (255, 0, 0), self.rect)
         surface.blit(img, (self.rect.x - (self.offset[0] * self.image_scale),
                            self.rect.y - (self.offset[1] * self.image_scale)))
+
+    def update_action(self, new_action):
+        # Check if the new action is different to the previous one
+        if new_action != self.action:
+            self.action = new_action
+            # Update the animation settings
+            self.frame_index = 0
+            self.update_time = pygame.time.get_ticks()
+
+
+
