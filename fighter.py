@@ -27,6 +27,7 @@ class Fighter():
         self.image = self.animation_list[self.action][self.frame_index]
         self.rect = pygame.Rect((x, y, 80, 180))
         self.vel_y = 0
+        self.running = False
         self.jump = False
         self.attacking = False
         self.attack_type = 0
@@ -48,6 +49,7 @@ class Fighter():
         GRAVITY = 2
         dx = 0
         dy = 0
+        self.running = False
 
         # Get Key-presses
         key = pygame.key.get_pressed()
@@ -58,8 +60,10 @@ class Fighter():
             # Player movement coordinates
             if key[pygame.K_a]:
                 dx = -SPEED
+                self.running = True
             if key[pygame.K_d]:
                 dx = SPEED
+                self.running = True
 
             # Player Jumping
             if key[pygame.K_UP] and self.jump == False:
@@ -101,6 +105,11 @@ class Fighter():
     # Handle animation updates
 
     def update(self):
+        # Check what action the player is performing
+        if self.running:
+            self.action = 1
+        else:
+            self.action = 0
         animation_cooldown = 50
         # Update Image
         self.image = self.animation_list[self.action][self.frame_index]
