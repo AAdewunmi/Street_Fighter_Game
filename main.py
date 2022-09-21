@@ -81,22 +81,33 @@ fighter_2 = Fighter(700, 310, True, WIZARD_DATA, wizard_sheet, WIZARD_ANIMATION_
 run = True
 while run:
     clock.tick(FPS)
+
     # Draw Background
     draw_bg()
+
     # Show Player Stats
     draw_health_bar(fighter_1.health, 20, 20)
     draw_health_bar(fighter_2.health, 580, 20)
+
     # Move Fighters
     fighter_1.move(SCREEN_WIDTH, SCREEN_HEIGHT, screen, fighter_2)
     # fighter_2.move()
+
+    # Update Fighters
+    fighter_1.update()
+    fighter_2.update()
+
     # Draw Fighters
     fighter_1.draw(screen)
     fighter_2.draw(screen)
+
     # Implement Event Handler
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             run = False
+
     # Update Display
     pygame.display.update()
+
 # Exit PyGame
 pygame.quit()
