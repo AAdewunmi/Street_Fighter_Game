@@ -50,6 +50,7 @@ class Fighter():
         dx = 0
         dy = 0
         self.running = False
+        self.attack_type = 0
 
         # Get Key-presses
         key = pygame.key.get_pressed()
@@ -66,7 +67,7 @@ class Fighter():
                 self.running = True
 
             # Player Jumping
-            if key[pygame.K_UP] and self.jump == False:
+            if key[pygame.K_w] and not self.jump:
                 self.vel_y = -30
                 self.jump = True
 
@@ -106,11 +107,21 @@ class Fighter():
 
     def update(self):
         # Check what action the player is performing
-        if self.jump:
+        if self.attacking:
+            if self.attack_type == 1:
+                # 3: Attack 1
+                self.update_action(3)
+            elif self.attack_type == 2:
+                # 4: Attack 2
+                self.update_action(4)
+        elif self.jump:
+            # 1: Jump
             self.update_action(2)
         elif self.running:
+            # 0: Run
             self.update_action(1)
         else:
+            # 0:Idle
             self.update_action(0)
         animation_cooldown = 50
         # Update Image
@@ -122,7 +133,6 @@ class Fighter():
         # Check if the animation has finished
         if self.frame_index >= len(self.animation_list[self.action]):
             self.frame_index = 0
-
 
     def attack(self, surface, target):
         self.attacking = True
@@ -145,6 +155,3 @@ class Fighter():
             # Update the animation settings
             self.frame_index = 0
             self.update_time = pygame.time.get_ticks()
-
-
-
