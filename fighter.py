@@ -106,7 +106,9 @@ class Fighter():
 
     def update(self):
         # Check what action the player is performing
-        if self.running:
+        if self.jump:
+            self.update_action(2)
+        elif self.running:
             self.update_action(1)
         else:
             self.update_action(0)
