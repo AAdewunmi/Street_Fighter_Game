@@ -84,29 +84,29 @@ class Fighter:
                         self.attack_type = 1
                     if key[pygame.K_t]:
                         self.attack_type = 2
-            # Check player 1 controls the game
-            # if self.player == 1:
-            #     # Player movement coordinates
-            #     if key[pygame.K_a]:
-            #         dx = -SPEED
-            #         self.running = True
-            #     if key[pygame.K_d]:
-            #         dx = SPEED
-            #         self.running = True
-            #
-            #     # Player Jumping
-            #     if key[pygame.K_w] and not self.jump:
-            #         self.vel_y = -30
-            #         self.jump = True
-            #
-            #     # Player Attacking
-            #     if key[pygame.K_r] or key[pygame.K_t]:
-            #         self.attack(surface, target)
-            #         # Determine which attack type was used
-            #         if key[pygame.K_r]:
-            #             self.attack_type = 1
-            #         if key[pygame.K_t]:
-            #             self.attack_type = 2
+            # Check player 2 controls the game
+            if self.player == 2:
+                # Player movement coordinates
+                if key[pygame.K_LEFT]:
+                    dx = -SPEED
+                    self.running = True
+                if key[pygame.K_RIGHT]:
+                    dx = SPEED
+                    self.running = True
+
+                # Player Jumping
+                if key[pygame.K_UP] and not self.jump:
+                    self.vel_y = -30
+                    self.jump = True
+
+                # Player Attacking
+                if key[pygame.K_y] or key[pygame.K_u]:
+                    self.attack(surface, target)
+                    # Determine which attack type was used
+                    if key[pygame.K_y]:
+                        self.attack_type = 1
+                    if key[pygame.K_u]:
+                        self.attack_type = 2
         # Player Return From Jumping
         self.vel_y += GRAVITY
         dy += self.vel_y

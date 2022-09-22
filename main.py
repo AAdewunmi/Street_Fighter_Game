@@ -91,7 +91,7 @@ while run:
 
     # Move Fighters
     fighter_1.move(SCREEN_WIDTH, SCREEN_HEIGHT, screen, fighter_2)
-    # fighter_2.move()
+    #fighter_2.move(SCREEN_WIDTH, SCREEN_HEIGHT, screen, fighter_1)
 
     # Update Fighters
     fighter_1.update()
