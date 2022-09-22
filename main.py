@@ -40,6 +40,11 @@ WHITE = (255, 255, 255)
 intro_count = 3
 last_count_update = pygame.time.get_ticks()
 
+# Define Variables For Player Game Score
+score = [0, 0]
+round_over = False
+ROUND_OVER_COOLDOWN = 2000
+
 # Define Fighter Sprite Sheet Image Variables
 WARRIOR_SIZE = 162
 WARRIOR_SCALE = 4
@@ -124,6 +129,16 @@ while run:
     fighter_1.draw(screen)
     fighter_2.draw(screen)
 
+    # Check for player defeat
+    if not round_over:
+        if not fighter_1.alive:
+            score[1] += 1
+            round_over = True
+            round_over_time = pygame.time.get_ticks()
+        elif not fighter_2.alive:
+            score[0] += 1
+            round_over = True
+            round_over_time = pygame.time.get_ticks()
     # Implement Event Handler
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
