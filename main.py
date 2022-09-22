@@ -143,7 +143,8 @@ while run:
             round_over = True
             round_over_time = pygame.time.get_ticks()
     else:
-        pass
+        # Display "Victory" Image
+        screen.blit(victory_img, (360, 150))
 
     # Implement Event Handler
     for event in pygame.event.get():
