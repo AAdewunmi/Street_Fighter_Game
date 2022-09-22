@@ -60,7 +60,7 @@ class Fighter:
         key = pygame.key.get_pressed()
 
         # Can only perform other actions if not currently attacking
-        if not self.attacking:
+        if not self.attacking and self.alive:
             # Check player 1 controls the game
             if self.player == 1:
                 # Player movement coordinates
