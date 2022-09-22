@@ -70,7 +70,7 @@ score_font = pygame.font.Font("assets/fonts/turok.ttf", 30)
 # Function for drawing text
 def draw_text(text, font, text_col, x, y):
     img = font.render(text, True, text_col)
-    screen.blit(img, (0, 0))
+    screen.blit(img, (x, y))
 
 
 # Function For Drawing Background
@@ -109,11 +109,12 @@ while run:
         fighter_1.move(SCREEN_WIDTH, SCREEN_HEIGHT, screen, fighter_2)
         fighter_2.move(SCREEN_WIDTH, SCREEN_HEIGHT, screen, fighter_1)
     else:
+        # display count timer
+        draw_text(str(intro_count), count_font, RED, SCREEN_WIDTH / 2, SCREEN_HEIGHT / 3)
         # Update count timer
         if (pygame.time.get_ticks() - last_count_update) >= 1000:
             intro_count -= 1
             last_count_update = pygame.time.get_ticks()
-            print(intro_count)
 
     # Update Fighters
     fighter_1.update()
