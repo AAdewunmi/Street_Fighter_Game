@@ -62,6 +62,16 @@ wizard_sheet = pygame.image.load("assets/images/wizard/Sprites/wizard.png").conv
 WARRIOR_ANIMATION_STEPS = [10, 8, 1, 7, 7, 3, 7]
 WIZARD_ANIMATION_STEPS = [8, 8, 1, 8, 8, 3, 7]
 
+# Define Fonts
+count_font = pygame.font.Font("assets/fonts/turok.ttf", 80)
+score_font = pygame.font.Font("assets/fonts/turok.ttf", 30)
+
+
+# Function for drawing text
+def draw_text(text, font, text_col, x, y):
+    img = font.render(text, True, text_col)
+    screen.blit(img, (0, 0))
+
 
 # Function For Drawing Background
 def draw_bg():
