@@ -88,25 +88,25 @@ class Fighter:
             # Check Wizard player controls the game
             if self.player == 2:
                 # Player movement coordinates
-                if key[pygame.K_LEFT]:
+                if key[pygame.K_h]:
                     dx = -SPEED
                     self.running = True
-                if key[pygame.K_RIGHT]:
+                if key[pygame.K_k]:
                     dx = SPEED
                     self.running = True
 
                 # Player Jumping
-                if key[pygame.K_UP] and not self.jump:
+                if key[pygame.K_u] and not self.jump:
                     self.vel_y = -30
                     self.jump = True
 
                 # Player Attacking
-                if key[pygame.K_y] or key[pygame.K_u]:
+                if key[pygame.K_n] or key[pygame.K_m]:
                     self.attack(target)
                     # Determine which attack type was used
-                    if key[pygame.K_y]:
+                    if key[pygame.K_n]:
                         self.attack_type = 1
-                    if key[pygame.K_u]:
+                    if key[pygame.K_m]:
                         self.attack_type = 2
         # Player Return From Jumping
         self.vel_y += GRAVITY
