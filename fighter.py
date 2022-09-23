@@ -62,7 +62,7 @@ class Fighter:
 
         # Can only perform other actions if not currently attacking
         if not self.attacking and self.alive and not round_over:
-            # Check player 1 controls the game
+            # Check Warrior player controls the game
             if self.player == 1:
                 # Player movement coordinates
                 if key[pygame.K_a]:
@@ -78,14 +78,14 @@ class Fighter:
                     self.jump = True
 
                 # Player Attacking
-                if key[pygame.K_r] or key[pygame.K_t]:
+                if key[pygame.K_z] or key[pygame.K_x]:
                     self.attack(target)
                     # Determine which attack type was used
-                    if key[pygame.K_r]:
+                    if key[pygame.K_z]:
                         self.attack_type = 1
-                    if key[pygame.K_t]:
+                    if key[pygame.K_x]:
                         self.attack_type = 2
-            # Check player 2 controls the game
+            # Check Wizard player controls the game
             if self.player == 2:
                 # Player movement coordinates
                 if key[pygame.K_LEFT]:
