@@ -63,6 +63,12 @@ pygame.mixer.music.load("assets/audio/music.mp3")
 pygame.mixer.music.set_volume(0.5)
 pygame.mixer.music.play(-1, 0.0, 5000)
 
+# Load warrior sword and wizard staff sound effect
+sword_fx = pygame.mixer.Sound("assets/audio/sword.wav")
+sword_fx.set_volume(0.75)
+staff_fx = pygame.mixer.Sound("assets/audio/magic.wav")
+staff_fx.set_volume(0.75)
+
 # Load Background Image
 bg_image = pygame.image.load("assets/images/background/background.jpg").convert_alpha()
 
@@ -104,8 +110,8 @@ def draw_health_bar(health, x, y):
 
 
 # Create Two Instances Of Fighter
-fighter_1 = Fighter(1, 200, 310, False, WARRIOR_DATA, warrior_sheet, WARRIOR_ANIMATION_STEPS)
-fighter_2 = Fighter(2, 700, 310, True, WIZARD_DATA, wizard_sheet, WIZARD_ANIMATION_STEPS)
+fighter_1 = Fighter(1, 200, 310, False, WARRIOR_DATA, warrior_sheet, WARRIOR_ANIMATION_STEPS, sword_fx)
+fighter_2 = Fighter(2, 700, 310, True, WIZARD_DATA, wizard_sheet, WIZARD_ANIMATION_STEPS, staff_fx)
 
 # Create Game Loop
 run = True
@@ -159,8 +165,8 @@ while run:
             round_over = False
             intro_count = 3
             # Create Two Instances Of Fighter
-            fighter_1 = Fighter(1, 200, 310, False, WARRIOR_DATA, warrior_sheet, WARRIOR_ANIMATION_STEPS)
-            fighter_2 = Fighter(2, 700, 310, True, WIZARD_DATA, wizard_sheet, WIZARD_ANIMATION_STEPS)
+            fighter_1 = Fighter(1, 200, 310, False, WARRIOR_DATA, warrior_sheet, WARRIOR_ANIMATION_STEPS, sword_fx)
+            fighter_2 = Fighter(2, 700, 310, True, WIZARD_DATA, wizard_sheet, WIZARD_ANIMATION_STEPS, staff_fx)
 
     # Implement Event Handler
     for event in pygame.event.get():

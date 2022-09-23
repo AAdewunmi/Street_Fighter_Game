@@ -14,7 +14,7 @@ import pygame
 
 # Fighter Class
 class Fighter:
-    def __init__(self, player, x, y, flip, data, sprite_sheet, animation_steps):
+    def __init__(self, player, x, y, flip, data, sprite_sheet, animation_steps, sound):
         self.player = player
         self.size = data[0]
         self.image_scale = data[1]
@@ -33,6 +33,7 @@ class Fighter:
         self.attacking = False
         self.attack_type = 0
         self.attack_cooldown = 0
+        self.attack_sound = sound
         self.hit = False
         self.health = 100
         self.alive = True
@@ -190,6 +191,7 @@ class Fighter:
 
     def attack(self, target):
         if self.attack_cooldown == 0:
+            self.attack_sound.play()
             self.attacking = True
             attacking_rect = pygame.Rect(self.rect.centerx - (2 * self.rect.width * self.flip),
                                          self.rect.y, 2 * self.rect.width, self.rect.height)
