@@ -1,29 +1,69 @@
-# Project Title: Street Fighter Game (Work-In-Progress)
+# Project Title: Street Fighter Clone Made in Python
 
-## What is the project?
-
-Aim: The aim of this project is to build a Street Fighter Game in python using the pygame library.
-
-- Screenshot of Game UI
+## 1. Project Description:
 
 
-![Image description](assets/images/Demo_Screenshot.png)
+This project is a Clone of the Street Fighter Game. It has been developed in Python programming language, using the Pygame library.
 
 
-## Tech Stack
+## 2. Tech Stack:
+
+- Python 3
+- Pygame
+
+URL: [https://www.pygame.org/news ](https://www.pygame.org/news)
 
 
-## What is the MVP?
+## 3. Installing:
+
+1. Clone the git repo
+
+```
+https://github.com/AAdewunmi/Street_Fighter_Game.git
+```
+
+2. Open project folder
+
+3. Explore
+
+4. Open main.py and run
+
+5. Play the game
+
+Enjoy 😎
 
 
-## What are the sprinkles (Nice to haves)?
+## 4. How To Play:
+
+Press the following keys on a keyboard to play the game:
+
+- Warrior
+
+| Movement | Jumping | Attacking  | 
+| :---: | :---: | :---: |
+| a <--> d  | w | z or x
 
 
-## When will the project be complete?
+- Wizard
+
+| Movement | Jumping | Attacking  | 
+| :---: | :---: | :---: |
+| h <--> k  | u | n or m
 
 
-## Adapted from:
+## 5. Screen Recording:
 
+https://user-images.githubusercontent.com/15172744/190894691-c52ac22d-b76c-4890-9057-98eed66683a9.mp4
+
+
+## 6. Contributing:
+
+Pull requests are welcome. 
+
+For major changes, please open an issue first to discuss what you would like to change with project owner (Coding With Russ).
+
+
+## 7. Created By:
 
 Name: Coding With Russ
 
@@ -32,3 +72,6 @@ Project Name: Street Fighter Style Fighting Game in Python using Pygame - Comple
 Youtube: https://www.youtube.com/watch?v=s5bd9KMSSW4
 
 Github: https://github.com/russs123/brawler_tut
+
+
+
